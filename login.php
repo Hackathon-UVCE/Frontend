@@ -1,3 +1,41 @@
+<?php
+session_start();
+
+include("db.php");
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+  $UserName = $_POST['userName'];
+  $email = $_POST['mail'];
+  $ContactNumber = $_POST['pnumber'];
+  $password = $_POST['password'];
+
+
+  if(!empty($email)&& !empty($password) && !is_numeric($email))
+  {
+    $query = "insert into frontend (userName, mail, pnumber, password ) values('$UserName', '$email', '$ContactNumber', '$password')";
+
+    mysqli_query($conn, $query);
+
+    echo "<script type='text/javascript'> alert('Successfully Registered');</script>";
+    header("Location: " . $_SERVER['PHP_SELF']); // Redirect to the same page
+    exit();
+
+
+  }
+  else{
+    echo "<script type='text/javascript'> alert('Please Enter some Valid Information');</script>";
+
+  }
+
+}
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +48,13 @@
 <div class="container" id="main">
 
   <div class="sign-up">
-    <form>
+    <form method="POST">
         <h1>Create Account</h1>
         <p> use your Email for registration</p>
-        <input type="text" name="txt" placeholder="UserName"><br><br>
-        <input type="email" name="email" placeholder="Email"><br><br>
-        <input type="password" name="pass" placeholder="Password"><br><br>
+        <input type="text" name="userName" placeholder="UserName"><br><br>
+        <input type="email" name="mail" placeholder="Email"><br><br>
+        <input type="number" name="pnumber" placeholder="ContactNumber">
+        <input type="password" name="password" placeholder="Password"><br><br>
         <button>SIGN UP</button>
     </form>
   </div> 
