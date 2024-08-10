@@ -1,75 +1,74 @@
 <?php
 session_start();
-include("db.php"); // Make sure you have the correct database connection file
+include("connection.php");
+include("functions.php");
+
+$error_message = "";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $email = $_POST['mail'];
+    $mail = $_POST['mail'];
     $password = $_POST['password'];
 
-    if (!empty($email) && !empty($password) && !is_numeric($email)) {
-        // Prepare and execute the SQL query
-        $stmt = $conn->prepare("SELECT * FROM frontend WHERE mail = ? LIMIT 1");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    if (!empty($mail) && !empty($password)) {
+        $query = "SELECT * FROM frontend WHERE mail = '$mail' LIMIT 1";
+        $result = mysqli_query($con, $query);
 
-        if ($result->num_rows > 0) {
-            $user_data = $result->fetch_assoc();
-            
-            // Verify the password against the hashed password stored in the database
-            if (password_verify($password, $user_data['password'])) {
-                $_SESSION['user'] = $user_data['userName']; // Store the user's name in the session
-                header("Location: index.php"); // Redirect to the welcome page
-                exit();
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                if ($user_data['password'] === $password) {
+                    $_SESSION['mail'] = $user_data['mail'];
+                    header("Location: index.php");  // Redirect to index.php on successful login
+                    die;
+                } else {
+                    $error_message = "Incorrect password!";
+                }
             } else {
-                $_SESSION['message'] = "Wrong username or password.";
+                $error_message = "No user found with that email!";
             }
         } else {
-            $_SESSION['message'] = "Wrong username or password.";
+            $error_message = "Query failed!";
         }
-
-        $stmt->close();
     } else {
-        $_SESSION['message'] = "Please fill in all fields with valid information.";
+        $error_message = "Please enter some valid information!";
     }
-
-    // Redirect back to the sign-in page
-    header("Location: signin.php");
-    exit();
-}
-
-// Display any session messages as alerts
-if (isset($_SESSION['message'])) {
-    echo "<script type='text/javascript'>alert('" . $_SESSION['message'] . "');</script>";
-    unset($_SESSION['message']); 
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="signin.css">
-
+    <style>
+        .error-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 10px;
+            color: red;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <?php if (!empty($error_message)): ?>
+        <div class="error-message"><?php echo $error_message; ?></div>
+    <?php endif; ?>
+    
     <div class="Sign-in">
         <form method="post" action="signin.php">
             <h1>Sign in</h1>
-            <p> Use your exisiting account</p>
+            <p> Use your existing account</p>
             
             <input type="email" name="mail" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
             <a href="#">Forgot your Password?</a><br><br>
-            <button type="submit">SIGN IN</button>
+            <button type="submit" value="Signin">SIGN IN</button>
         </form>
-        <p>Don't have an account?<a href="signup.php">Sign Up here</a></p>
-      </div> 
-      
-      </div>
+        <p>Don't have an account? <a href="signup.php">Sign Up here</a></p>
+    </div> 
 </body>
 </html>

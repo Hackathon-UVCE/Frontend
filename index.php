@@ -1,6 +1,7 @@
 <?php
-include('db.php');
+session_start();
 
+$_SESSION;
 ?>
 
 <!DOCTYPE html>
