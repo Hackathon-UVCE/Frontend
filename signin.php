@@ -60,14 +60,16 @@ if (isset($_SESSION['message'])) {
     <div class="Sign-in">
         <form method="post" action="signin.php">
             <h1>Sign in</h1>
-            <p>Use your existing account</p>
+            <p> Use your exisiting account</p>
             
             <input type="email" name="mail" placeholder="Email" required><br><br>
             <input type="password" name="password" placeholder="Password" required><br><br>
             <a href="#">Forgot your Password?</a><br><br>
             <button type="submit">SIGN IN</button>
         </form>
-        <p>Don't have an account? <a href="signup.php">Sign Up here</a></p>
-    </div>
+        <p>Don't have an account?<a href="signup.php">Sign Up here</a></p>
+      </div> 
+      
+      </div>
 </body>
 </html>

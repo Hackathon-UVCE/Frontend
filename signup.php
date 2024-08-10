@@ -48,7 +48,7 @@ if (isset($_SESSION['message'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Login-page</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -56,17 +56,18 @@ if (isset($_SESSION['message'])) {
   <div class="sign-up">
     <form method="POST">
         <h1>Create Account</h1>
-        <p>Use your Email for registration</p>
-        <input type="text" name="userName" placeholder="UserName" required><br><br>
-        <input type="email" name="mail" placeholder="Email" required><br><br>
-        <input type="number" name="pnumber" placeholder="ContactNumber" required>
-        <input type="password" name="password" placeholder="Password" required><br><br>
-        <button type="submit">SIGN UP</button>
+        <p> use your Email for registration</p>
+        <input type="text" name="userName" placeholder="UserName"><br><br>
+        <input type="email" name="mail" placeholder="Email"><br><br>
+        <input type="number" name="pnumber" placeholder="ContactNumber">
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <button>SIGN UP</button>
     </form>
-    <p>By clicking the sign-up button you will be accepting our<br>
-    <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+    <p>By clicking sign up button you will be accepting our<br>
+    <a href=""> Terms and Condition</a> and <a href="#">Policy Privacy</a>
     </p>
-    <p>Already have an account? <a href="signin.php">Login Here</a></p>
+    <p>Already have an account? <a href = "signin.php">Login Here</a></p>
+
   </div> 
 </div>
 </body>
