@@ -39,7 +39,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Sign In</title>
+=======
+    <title>Document</title>
+    <link rel="stylesheet" href="signin.css">
+>>>>>>> a7aaea79fa99b901f10c539a1afab5f328de5e70
 </head>
 <body>
     <div class="Sign-in">
