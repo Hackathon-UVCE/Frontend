@@ -65,32 +65,7 @@ if (isset($_SESSION['message'])) {
         <button>SIGN UP</button>
     </form>
   </div> 
-  <div class="Sign-in">
-    <form>
-        <h1>Sign in</h1>
-        <p> use your account</p>
-        
-        <input type="email" name="email" placeholder="Email"><br><br>
-        <input type="password" name="pass" placeholder="Password"><br><br>
-        <a  href="#">Forget your Password?</a><br><br>
-        <button>SIGN In</button>
-    </form>
-  </div> 
-  <div class="overlay-conatiner">
-    <div class="overlay">
-        <div class="overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>To keep connected with us please login with your personal info</p>
-            <button id="signIN">Sign In</button>
-        </div>
-        <div class="overlay-right">
-            <h1>Hello,user</h1>
-            <p>Enter your personal details to connect with us</p>
-            <button id="signUp">sign Up</button>
-        </div>
-
-    </div>
-  </div>
+  
 
 
 </div>
