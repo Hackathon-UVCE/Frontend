@@ -1,13 +1,13 @@
 <?php
 session_start();
-include("db.php");
+include("db.php"); // Make sure you have the correct database connection file
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['mail'];
     $password = $_POST['password'];
 
     if (!empty($email) && !empty($password) && !is_numeric($email)) {
-        // Use prepared statements to prevent SQL injection
+        // Prepare and execute the SQL query
         $stmt = $conn->prepare("SELECT * FROM frontend WHERE mail = ? LIMIT 1");
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -16,39 +16,49 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result->num_rows > 0) {
             $user_data = $result->fetch_assoc();
             
-            // Verify password (assuming password is hashed)
+            // Verify the password against the hashed password stored in the database
             if (password_verify($password, $user_data['password'])) {
-                header("Location: index.php");
+                $_SESSION['user'] = $user_data['userName']; // Store the user's name in the session
+                header("Location: index.php"); // Redirect to the welcome page
                 exit();
             } else {
-                echo "<script type='text/javascript'> alert('Wrong username or password');</script>";
+                $_SESSION['message'] = "Wrong username or password.";
             }
         } else {
-            echo "<script type='text/javascript'> alert('Wrong username or password');</script>";
+            $_SESSION['message'] = "Wrong username or password.";
         }
 
         $stmt->close();
     } else {
-        echo "<script type='text/javascript'> alert('Please fill in all fields with valid information');</script>";
+        $_SESSION['message'] = "Please fill in all fields with valid information.";
     }
+
+    // Redirect back to the sign-in page
+    header("Location: signin.php");
+    exit();
+}
+
+// Display any session messages as alerts
+if (isset($_SESSION['message'])) {
+    echo "<script type='text/javascript'>alert('" . $_SESSION['message'] . "');</script>";
+    unset($_SESSION['message']); 
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Sign In</title>
-=======
+
     <title>Document</title>
     <link rel="stylesheet" href="signin.css">
->>>>>>> a7aaea79fa99b901f10c539a1afab5f328de5e70
+
 </head>
 <body>
     <div class="Sign-in">
-        <form method="post">
+        <form method="post" action="signin.php">
             <h1>Sign in</h1>
             <p> Use your exisiting account</p>
             
