@@ -4,64 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disaster Preparedness</title>
+    <link rel="icon" type="img" href="https://www.shutterstock.com/image-vector/home-insurance-vector-logo-concept-600nw-2135321937.jpg "> 
+    
     <link rel="stylesheet" href="styles.css">
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC981d73HzrGg6BIVNVQHGgL60zxK9ql_s"></script>
+</head>
+    
+    
 </head>
 <body>
     <header>
-        <div class="logo">Disaster Ready</div>
-        <nav>
+       <div id="logo" class="one" style="font-weight: bolder; background-color: darkolivegreen; border-radius: 20px;padding: 10px;">Disaster Ready</div> 
+        <nav class="one">
             <a href="#home">Home</a>
+            <a href="dashboard.html" target="_blank">Dashboard</a>
             <a href="#alerts">Alerts</a>
             <a href="#resources">Resources</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section id="map">
-        <h2>Find Shelters and Emergency Services</h2>
-        <div id="map-canvas" style="height: 500px; width: 100%;"></div>
-    </section>
+    
     
 
-    <section class="hero">
+    <section id="hero" class="one">
         <h1>Be Prepared for Any Disaster</h1>
         <button class="cta-button" onclick="showPopup()">Get Prepared Now</button>
     </section>
 
-    <section id="alerts">
-        <h2>Real-Time Alerts</h2>
-        <div class="alert-box" onclick="showAlertDetails('Hurricane Alert: Category 5 Storm Approaching')">Hurricane Alert: Category 5 Storm Approaching</div>
-        <div class="alert-box" onclick="showAlertDetails('Flood Warning: Heavy Rain Expected')">Flood Warning: Heavy Rain Expected</div>
-    </section>
+   
 
-    <aside class="resources">
+
+    <section id="alerts">
+        <h2 style="text-align: center;">Real-Time Alerts</h2>
+        
+        <button class="cta-button"  onclick="nearbyloc()" style="margin-bottom: 10px;">Find Nearby Places</button>
+
+        <div  id="nearbyloc" class="nearlo">
+           
+           
+            <ol id="hospitals" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 20px;">
+   
+            
+            <li><a target="_blank" href="https://www.google.com/maps/place/Fortis+Hospital+Rajajinagar,+Bangalore/@13.0021689,77.5465136,919m/data=!3m1!1e3!4m10!1m2!2m1!1sFortis+Hospital+Rajajinagar,+Bangalore!3m6!1s0x3bae3db50f682bc7:0x410b77b8aa9b24d!8m2!3d13.0021399!4d77.5491058!15sCiZGb3J0aXMgSG9zcGl0YWwgUmFqYWppbmFnYXIsIEJhbmdhbG9yZSIDiAEBkgEIaG9zcGl0YWzgAQA!16s%2Fg%2F1tfwndjv?entry=ttu"> Fortis Hospital Rajajinagar, Bangalore</a></li>
+            
+            <li><a target="_blank" href="https://www.google.com/maps/place/The+Victoria+Hospital/@12.9569871,77.5287329,7357m/data=!3m1!1e3!4m10!1m2!2m1!1sthe+victoria+hospital+bengaluru+karnataka!3m6!1s0x3bae16773e7dc413:0xa2e886e24412412b!8m2!3d12.9569871!4d77.5637518!15sCil0aGUgdmljdG9yaWEgaG9zcGl0YWwgYmVuZ2FsdXJ1IGthcm5hdGFrYVorIil0aGUgdmljdG9yaWEgaG9zcGl0YWwgYmVuZ2FsdXJ1IGthcm5hdGFrYZIBEGdlbmVyYWxfaG9zcGl0YWyaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUnhNaTFsYkZObkVBReABAA!16s%2Fg%2F1xb2b_x1?entry=ttu"> The Victoria Hospital</a></li>
+
+            <li><a target="_blank" href="https://www.google.com/maps/place/ST+JOHNS+HOSPITAL+BMTC+BUS+STAND/@12.9295773,77.6133989,1839m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bae1516c5defb1d:0xdb3db5ceddc31db8!8m2!3d12.9295721!4d77.6159738!16s%2Fg%2F11f73272kj?entry=ttu"> ST JOHNS HOSPITAL</a></li>
+            
+
+            </ol>
+            <br>
+            <br>
+
+           <ol id="shelter" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: 20px;" >
+          <li>
+              <a></a>Guest Post by Brenda Chapman. ...</a></li>
+              <li>  <a href="https://www.google.com/maps/search/shipping+container+homes+in+bangalore/@12.9661939,77.6994807,58854m/data=!3m2!1e3!4b1?entry=ttu" target="_blank">Shipping Container Houses. ...</a></li>
+              <li> <a href="https://www.google.com/maps/search/relief+tents+in+bangalore/@12.9660384,77.5346319,117709m/data=!3m2!1e3!4b1?entry=ttu" target="_blank">Relief Tents. ...</a></li>
+              <li> <a href="https://www.google.com/maps/search/Shelter+Canopies+in+bangalore/@12.9660384,77.5346319,117709m/data=!3m2!1e3!4b1?entry=ttu" target="_blank">Shelter Canopies. ...</a></li>
+              <li> <a href="https://www.google.com/maps/search/Foldable+Shelters+in+bangalore/@12.9661939,77.6994807,58854m/data=!3m2!1e3!4b1?entry=ttu" target="_blank">Foldable Shelters. ...</a></li>
+              <li> <a href="https://www.google.com/maps/search/Plastic+Sheeting+Homes+in+bangalore/@12.9660384,77.5346319,117709m/data=!3m2!1e3!4b1?entry=ttu" target="_blank">Plastic Sheeting Homes. ...</a></li>
+              <li> <a href="https://www.google.com/maps/search/Sandbag+Shelters+in+bangalore/@12.9661939,77.6994807,58854m/data=!3m2!1e3!4b1?entry=ttu" target="_blank">Sandbag Shelters. ...</a></li>
+              
+           </li>
+            </ol>
+        </div>
+
+
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="https://images.pexels.com/photos/942560/pexels-photo-942560.jpeg?cs=srgb&dl=pexels-denniz-futalan-339724-942560.jpg&fm=jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="disaster3.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="https://w0.peakpx.com/wallpaper/65/854/HD-wallpaper-flood-in-australia-australia-flood-nature-water.jpg" alt="Image 3">
+                </div>
+            </div>
+            <div class="prev">&#10094;</div>
+            <div class="next">&#10095;</div>
+        </div>
+        
+        <div class="dots">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+
+
+
+
+
+        
+  
+
+       <section class="resources" id="resources">
         <h3>Educational Resources</h3>
-        <ul>
-            <li><img src="icon-earthquake.png" alt="Earthquake"> Earthquake Preparedness</li>
-            <li><img src="icon-flood.png" alt="Flood"> Flood Preparedness</li>
-        </ul>
-    </aside>
+        <div class="resource-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2910/2910021.png" alt="Earthquake">
+            <h4>Earthquake Preparedness</h4>
+            <p>Learn how to stay safe during an earthquake.</p>
+            <a href="https://www.youtube.com/watch?v=earthquake_safety_video" target="_blank" class="safety-link" >Safety Measures Video</a>
+            <div class="news-section">
+                <h3>Latest Earthquake News:</h3>
+                <ul>
+                    <li><a href="https://apnews.com/article/taiwan-earthquake-tsunami-f086aac0c3082036d1ca77c01828fb28" target="_blank" class="safety-link">Fierce earthquake Rattles Taiwan</a></li>
+                    <li><a href="https://www.hindustantimes.com/india-news/45magnitude-earthquake-hits-sikkim-101723173988353.html" target="_blank" class="safety-link">4.5-magnitude earthquake hits Sikkim</a></li>
+                    <li><a href="https://www.unicef.org/parenting/emergencies/earthquake-safety-information" target="_blank" class="safety-link">Tips for earthquake and Emergency (UNICEF)</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+        
+        <div class="resource-card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/024/295/684/small/tsunami-graphic-clipart-design-free-png.png" alt="Tsunami">
+            <h4>Tsunami Preparedness</h4>
+            <p>Find out what to do before, during, and after a tsunami.</p>
+            <a href="https://youtu.be/m7EDddq9ftQ?si=8MFqDQf3M3T7rDar" target="_blank" class="safety-link">Safety Measures Video</a>
+            <div class="news-section">
+                <h3>Latest Tsunami News:</h3>
+                <ul>
+                    <li><a href="https://www.indiatoday.in/world/story/earthquake-japan-tsunami-alert-2579016-2024-08-08" target="_blank" class="safety-link">Tsunami alert in several areas</a></li>
+                    <li><a href="https://www.thehindu.com/news/national/telangana/tsunamis-can-hit-indian-coasts-from-two-regions-says-former-ngri-director/article67226986.ece" target="_blank" class="safety-link">Tsunamis can hit Indian coasts from two regions</a></li>
+                    <li><a href="https://www.nationalgeographic.com/environment/article/tsunami-safety-tips" target="_blank" class="safety-link">Tips for Tsunami and Emergency</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="resource-card">
+            <img src="https://png.pngtree.com/png-clipart/20220926/ourmid/pngtree-rainstorm-flood-control-flood-geological-disaster-png-image_6147417.png" alt="Flood">
+            <h4>Flood Preparedness</h4>
+            <p>Steps to take to protect yourself and your property from flooding.</p>
+            <a href="https://youtu.be/43M5mZuzHF8?si=UMrurDY_0VYmh0-G" target="_blank" class="safety-link">Safety Measures Video</a>
+            <div class="news-section">
+                <h3>Latest Flood News:</h3>
+                <ul>
+                    <li><a href="https://www.hindustantimes.com/india-news/rain-alerts-imds-orange-flash-flood-warnings-for-himachal-pradesh-other-states-101723248335666.html" target="_blank" class="safety-link">IMD's orange, flash flood warnings for Himachal Pradesh</a></li>
+                    <li><a href="https://weather.com/news/weather/video/new-york-city-deploys-drones-to-warn-people-of-flood-danger" target="_blank" class="safety-link">Emergency storm warnings are going high-tech in New York City</a></li>
+                    <li><a href="https://www.weatherandradar.com/weather-news/helpful-tips-to-prepare-for-a-flood--433d5e86-aa64-42e1-b808-f0e9fb37032b" target="_blank" class="safety-link">Tips for flood Emergency</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="resource-card">
+            <img src="https://png.pngtree.com/png-clipart/20230914/original/pngtree-natural-disaster-vector-png-image_12151701.png" alt="Other Calamities">
+            <h4>Other Calamities Preparedness</h4>
+            <p>Be prepared for a variety of other potential disasters.</p>
+            <a href="https://youtube.com/playlist?list=PLWgKm7kgxzCsMHkEDuzYuKfbfI9GaszET&si=bP_nxhQAmzMHLXdO" target="_blank" class="safety-link">Safety Measures Video</a>
+            <div class="news-section">
+                <h3>Latest Other Calamities
+                     News:</h3>
+                <ul>
+                    <li><a href="https://apnews.com/article/taiwan-earthquake-tsunami-f086aac0c3082036d1ca77c01828fb28" target="_blank" class="safety-link">This century, heat waves are moving slower and lasting longer</a></li>
+                    <li><a href="https://eos.org/thelandslideblog/wayanad-landslides" target="_blank" class="safety-link">Wayanad landslides in Kerala</a></li>
+                    <li><a href="https://www.vox.com/even-better/356532/prepare-kids-family-climate-disasters-emotions-logistics-tornado-hurricane-wildfire-heat" target="_blank" class="safety-link">Tips for other Calamities</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <section id="map">
-        <h2>Find Shelters and Emergency Services</h2>
-        <!-- Interactive Map Placeholder -->
+        <h2>Find Shelter and Emergency Services</h2>
+    
+        <div id="mapss"> <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d90606.43488083906!2d77.64759253567316!3d12.981846101338824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sshelter!5e1!3m2!1sen!2sin!4v1723309947885!5m2!1sen!2sin" width="1500" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    
+        <div class="contact-section">
+            <h3>Emergency Contacts</h3>
+            <div class="contact-card">
+                <img src="https://cdn4.iconfinder.com/data/icons/VISTA/medical/png/400/ambulance.png" alt="ambulance">
+                <div class="contact-info">
+                    <h4>Ambulance</h4>
+                    <p>Call: 108</p>
+                    <p>Email: <a href="mailto:tnhsproject@gmail.com">tnhsproject@gmail.com (private)</a></p>
+                </div>
+            </div>
+            <div id="contact" class="contact-card">
+                <img src="https://png.pngtree.com/png-clipart/20211116/original/pngtree-fire-station-red-city-building-png-image_6928858.png" alt="Fire Department">
+                <div class="contact-info">
+                    <h4>Fire Department</h4>
+                    <p>Call: 101</p>
+                    <p>Email: <a href="mailto:cfo.mfb@mcgm.gov.in">cfo.mfb@mcgm.gov.in</a></p>
+                </div>
+            </div>
+            <div class="contact-card">
+                <img src="https://png.pngtree.com/png-clipart/20230821/original/pngtree-police-station-department-building-with-policeman-and-police-car-in-flat-style-background-illustration-picture-image_8135701.png" alt="Police Department">
+                <div class="contact-info">
+                    <h4>Police Department</h4>
+                    <p>Call: 100</p>
+                    <p>Email: <a href="mailto:acpcentraltrafficbcp@ksp.gov.in">acpcentraltrafficbcp@ksp.gov.in</a></p>
+                </div>
+            </div>
+        </div>
     </section>
-
-    <footer>
-        <p>&copy; 2024 Disaster Ready | <a href="#">Privacy Policy</a></p>
-    </footer>
-
-    <!-- Popup Modal -->
+    
+        
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close" onclick="closePopup()">&times;</span>
             <h2>Disaster Preparedness</h2>
-            <p>Get ready for any disaster by following our comprehensive guides and alerts.</p>
-            <button onclick="closePopup()">Close</button>
+            <p>Get ready for any disaster by following our comprehensive guides and alerts.<br>
+                <h4>Step 1 :</h4>  
+                Go to resources => select the kind of disaster
+               <h4>Step 2 : </h4> 
+                Go through the safety and precautionary measures  
+                <h4>Step 3 :</h4>  
+                Go through the video content for more info.
+                 <h4>Step 4 :</h4>  
+                Incase of Emergency go to contact section and access all the Emergency contacts
+            </p>
+            <button onclick="closePopup()" style="background-color: hsla(80, 96%, 21%, 0.826)" id="clsbtn" >Close</button>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <footer>
+        <p>&copy; 2024 Disaster Ready | <a href="#">Privacy Policy</a></p>
+    </footer>
+   
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

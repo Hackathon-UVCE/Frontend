@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" type="img" href="https://www.shutterstock.com/image-vector/home-insurance-vector-logo-concept-600nw-2135321937.jpg "> 
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: white;">
+
+    <section >
+        <br>
+        <h1 style="text-align: center; font-size: 50px;">Your Dashboard</h1>
+       <div style="width: 100%; display: flex; justify-content: center; "> <img src="dashboardbac2.jpg" alt="help" style="margin-top: -51px;"></div>
+       
+        <p style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-left: 15px;font-size: 30px;margin-top: -20px;" >Track your preparedness status and manage your emergency plans.</p>
+       <a href="#yoyo"> <button class="cta-button" onclick="showChecklist()"  style="margin-left: 23px;">Checklist & Planning Tools</button></a>
+        <div id="checklist" class="hidden">
+            <h2 id="yoyo" style="text-align: center; font-size: 30px;">Disaster Preparedness Checklist</h2>
+<form style="margin-left: 40px; font-size: 20px;">
+    <h3>Stay Informed</h3>
+    <input type="checkbox" id="monitorNews">
+    <label for="monitorNews">Monitor official news channels, radio, or weather apps for updates</label><br>
+    <input type="checkbox" id="followAlerts">
+    <label for="followAlerts">Follow emergency alerts and instructions from authorities</label><br>
+
+    <h3>Secure Your Home</h3>
+    <input type="checkbox" id="secureWindows">
+    <label for="secureWindows">Close and lock all windows and doors</label><br>
+    <input type="checkbox" id="turnOffUtilities">
+    <label for="turnOffUtilities">Turn off utilities (gas, electricity, water) if instructed</label><br>
+    <input type="checkbox" id="secureObjects">
+    <label for="secureObjects">Secure outdoor objects that could become projectiles</label><br>
+
+    <h3>Gather Emergency Supplies</h3>
+    <input type="checkbox" id="firstAidKit">
+    <label for="firstAidKit">First Aid Kit (bandages, antiseptics, medications)</label><br>
+    <input type="checkbox" id="water">
+    <label for="water">Water (at least one gallon per person per day for at least three days)</label><br>
+    <input type="checkbox" id="nonPerishableFood">
+    <label for="nonPerishableFood">Non-Perishable Food (enough for at least three days)</label><br>
+    <input type="checkbox" id="flashlightBatteries">
+    <label for="flashlightBatteries">Flashlights and Batteries</label><br>
+    <input type="checkbox" id="portableCharger">
+    <label for="portableCharger">Portable Charger for mobile devices</label><br>
+    <input type="checkbox" id="multiTool">
+    <label for="multiTool">Multi-Tool</label><br>
+    <input type="checkbox" id="importantDocuments">
+    <label for="importantDocuments">Important Documents (in a waterproof container)</label><br>
+
+    <h3>Prepare Your Vehicle</h3>
+    <input type="checkbox" id="fillGasTank">
+    <label for="fillGasTank">Fill the gas tank</label><br>
+    <input type="checkbox" id="checkTires">
+    <label for="checkTires">Check tire pressure and fluid levels</label><br>
+    <input type="checkbox" id="carEmergencyKit">
+    <label for="carEmergencyKit">Car emergency kit with tools, flares, and extra supplies</label><br>
+
+    <h3>Stay Connected</h3>
+    <input type="checkbox" id="notifyFamily">
+    <label for="notifyFamily">Notify family members of your location and plans</label><br>
+    <input type="checkbox" id="communicationPlan">
+    <label for="communicationPlan">Have a communication plan with designated contacts outside the disaster area</label><br>
+    <input type="checkbox" id="emergencyContacts">
+    <label for="emergencyContacts">Keep a list of emergency contact numbers</label><br>
+
+    <h3>Evacuate If Necessary</h3>
+    <input type="checkbox" id="followEvacuation">
+    <label for="followEvacuation">Follow evacuation orders immediately</label><br>
+    <input type="checkbox" id="meetingPlace">
+    <label for="meetingPlace">Have a pre-determined meeting place if separated from family members</label><br>
+    <input type="checkbox" id="takePets">
+    <label for="takePets">Take pets with you, if possible, or make arrangements for their care</label><br>
+
+    <h3>Shelter In Place (If Not Evacuating)</h3>
+    <input type="checkbox" id="chooseSafeRoom">
+    <label for="chooseSafeRoom">Choose a safe room, preferably an interior room without windows</label><br>
+    <input type="checkbox" id="gatherSupplies">
+    <label for="gatherSupplies">Gather your emergency supplies in this room</label><br>
+    <input type="checkbox" id="sealWindows">
+    <label for="sealWindows">Seal windows and doors with plastic sheeting and duct tape if needed</label><br>
+
+    <h3>Stay Calm and Help Others</h3>
+    <input type="checkbox" id="assistNeighbors">
+    <label for="assistNeighbors">Assist neighbors, especially the elderly or disabled</label><br>
+    <input type="checkbox" id="stayCalm">
+    <label for="stayCalm">Stay calm and provide reassurance to others</label><br>
+    <input type="checkbox" id="avoidCalls">
+    <label for="avoidCalls">Avoid unnecessary phone calls to keep lines open for emergencies</label><br>
+
+    <h3>After the Disaster</h3>
+    <input type="checkbox" id="checkInjuries">
+    <label for="checkInjuries">Check for injuries and provide first aid as needed</label><br>
+    <input type="checkbox" id="assessDamage">
+    <label for="assessDamage">Assess damage to your home and be cautious of hazards like gas leaks</label><br>
+    <input type="checkbox" id="communicate">
+    <label for="communicate">Let your family and friends know you are safe</label><br>
+    <input type="checkbox" id="followUp">
+    <label for="followUp">Keep up with local authorities' updates on recovery efforts</label><br>
+    
+</form>
+
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
