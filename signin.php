@@ -10,7 +10,7 @@
     <div class="Sign-in">
         <form>
             <h1>Sign in</h1>
-            <p> Use your exisiting account</p>
+            <p class="x"> Use your exisiting account</p>
             
             <input type="email" name="email" placeholder="Email"><br><br>
             <input type="password" name="pass" placeholder="Password"><br><br>
@@ -18,7 +18,7 @@
             <button>SIGN In</button>
             
         </form>
-        <p>Don't have an account?<a href="signup.php">Sign Up here</a></p>
+        <p class="pl">Don't have an account?<a href="signup.php"><span>Sign Up here</span></a></p>
       </div> 
       
       </div>
