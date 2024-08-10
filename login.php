@@ -51,10 +51,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <form method="POST">
         <h1>Create Account</h1>
         <p> use your Email for registration</p>
+<<<<<<< HEAD:login.php
         <input type="text" name="userName" placeholder="UserName"><br><br>
         <input type="email" name="mail" placeholder="Email"><br><br>
         <input type="number" name="pnumber" placeholder="ContactNumber">
         <input type="password" name="password" placeholder="Password"><br><br>
+=======
+        <input type="text" name="txt" placeholder="UserName">
+        <input type="email" name="email" placeholder="Email">
+        <input type="number" name="num" placeholder="Contact-no">
+        <input type="password" name="pass" placeholder="Password">
+>>>>>>> 1c0e9c28f9feb59f6ab1a82c2c2e6957cf9aa2b2:login.html
         <button>SIGN UP</button>
     </form>
   </div> 
@@ -63,9 +70,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         <h1>Sign in</h1>
         <p> use your account</p>
         
-        <input type="email" name="email" placeholder="Email"><br><br>
-        <input type="password" name="pass" placeholder="Password"><br><br>
-        <a  href="#">Forget your Password?</a><br><br>
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="pass" placeholder="Password">
+        <a  href="#">Forget your Password?</a>
         <button>SIGN In</button>
     </form>
   </div> 
