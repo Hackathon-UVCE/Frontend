@@ -1,33 +1,40 @@
 <?php
 session_start();
-
 include("db.php");
 
-if($_SERVER['REQUEST_METHOD'] == "POST")
-{
-  $UserName = $_POST['userName'];
-  $email = $_POST['mail'];
-  $ContactNumber = $_POST['pnumber'];
-  $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $UserName = $_POST['userName'];
+    $email = $_POST['mail'];
+    $ContactNumber = $_POST['pnumber'];
+    $password = $_POST['password'];
+
+    if (!empty($email) && !empty($password) && !is_numeric($email)) {
+
+        $stmt = $conn->prepare("INSERT INTO frontend (userName, mail, pnumber, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $UserName, $email, $ContactNumber, $password);
+
+        if ($stmt->execute()) {
+            $_SESSION['message'] = "Successfully Registered";
+        } else {
+            $_SESSION['message'] = "Registration Failed";
+        }
+
+        $stmt->close();
+
+       
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        $_SESSION['message'] = "Please Enter some Valid Information";
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+}
 
 
-  if(!empty($email)&& !empty($password) && !is_numeric($email))
-  {
-    $query = "insert into frontend (userName, mail, pnumber, password ) values('$UserName', '$email', '$ContactNumber', '$password')";
-
-    mysqli_query($conn, $query);
-
-    echo "<script type='text/javascript'> alert('Successfully Registered');</script>";
-    header("Location: " . $_SERVER['PHP_SELF']); 
-    exit();
-
-
-  }
-  else{
-    echo "<script type='text/javascript'> alert('Please Enter some Valid Information');</script>";
-
-  }
-
+if (isset($_SESSION['message'])) {
+    echo "<script type='text/javascript'>alert('" . $_SESSION['message'] . "');</script>";
+    unset($_SESSION['message']); 
 }
 ?>
 
