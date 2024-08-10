@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $user_data = mysqli_fetch_assoc($result);
                 if ($user_data['password'] === $password) {
                     $_SESSION['mail'] = $user_data['mail'];
-                    header("Location: index.php");  // Redirect to index.php on successful login
+                    header("Location: index.html");  // Redirect to index.php on successful login
                     die;
                 } else {
                     $error_message = "Incorrect password!";
