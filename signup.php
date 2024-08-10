@@ -64,9 +64,12 @@ if (isset($_SESSION['message'])) {
         <input type="password" name="password" placeholder="Password"><br><br>
         <button>SIGN UP</button>
     </form>
-  </div> 
-  
+    <p>By clicking sign up button you will be accepting our<br>
+    <a href=""> Terms and Condition</a> and <a href="#">Policy Privacy</a>
+    </p>
+    <p>Already have an account? <a href = "signin.php">Login Here</a></p>
 
+  </div> 
 
 </div>
     
