@@ -49,7 +49,7 @@ if (isset($_SESSION['message'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login-page</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.css">
 </head>
 <body>
 <div class="container" id="main">
@@ -57,17 +57,17 @@ if (isset($_SESSION['message'])) {
   <div class="sign-up">
     <form method="POST">
         <h1>Create Account</h1>
-        <p> use your Email for registration</p>
+        <p class="one"> use your Email for registration</p>
         <input type="text" name="userName" placeholder="UserName"><br><br>
         <input type="email" name="mail" placeholder="Email"><br><br>
-        <input type="number" name="pnumber" placeholder="ContactNumber">
+        <input type="number" name="pnumber" placeholder="ContactNumber"><br><br>
         <input type="password" name="password" placeholder="Password"><br><br>
         <button>SIGN UP</button>
     </form>
-    <p>By clicking sign up button you will be accepting our<br>
+    <p class="two">By clicking sign up button you will be accepting our<br>
     <a href=""> Terms and Condition</a> and <a href="#">Policy Privacy</a>
     </p>
-    <p>Already have an account? <a href = "signin.php">Login Here</a></p>
+    <p class="three">Already have an account? <a href = "signin.php">Login Here</a></p>
 
   </div> 
 
