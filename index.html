@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Preparedness</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Disaster Ready</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#alerts">Alerts</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="map">
+        <h2>Find Shelters and Emergency Services</h2>
+        <div id="map-canvas" style="height: 500px; width: 100%;"></div>
+    </section>
+    
+
+    <section class="hero">
+        <h1>Be Prepared for Any Disaster</h1>
+        <button class="cta-button" onclick="showPopup()">Get Prepared Now</button>
+    </section>
+
+    <section id="alerts">
+        <h2>Real-Time Alerts</h2>
+        <div class="alert-box" onclick="showAlertDetails('Hurricane Alert: Category 5 Storm Approaching')">Hurricane Alert: Category 5 Storm Approaching</div>
+        <div class="alert-box" onclick="showAlertDetails('Flood Warning: Heavy Rain Expected')">Flood Warning: Heavy Rain Expected</div>
+    </section>
+
+    <aside class="resources">
+        <h3>Educational Resources</h3>
+        <ul>
+            <li><img src="icon-earthquake.png" alt="Earthquake"> Earthquake Preparedness</li>
+            <li><img src="icon-flood.png" alt="Flood"> Flood Preparedness</li>
+        </ul>
+    </aside>
+
+    <section id="map">
+        <h2>Find Shelters and Emergency Services</h2>
+        <!-- Interactive Map Placeholder -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Disaster Ready | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Disaster Preparedness</h2>
+            <p>Get ready for any disaster by following our comprehensive guides and alerts.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
