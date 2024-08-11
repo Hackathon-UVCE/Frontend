@@ -1,7 +1,12 @@
 <?php
+
 session_start();
-session_unset();
-session_destroy();
+
+if(isset($_SESSION['mail']))
+{
+	unset($_SESSION['mail']);
+
+}
+
 header("Location: signin.php");
-exit();
-?>
+die;
