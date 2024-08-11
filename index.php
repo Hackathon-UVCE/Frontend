@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $user_data = mysqli_fetch_assoc($result);
                 if ($user_data['password'] === $password) {
                     $_SESSION['mail'] = $user_data['mail'];
-                    header("Location: index.html");  // Redirect to index.php on successful login
+                    header("Location: mainpage.html");  // Redirect to index.php on successful login
                     die;
                 } else {
                     $error_message = "Incorrect password!";
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <?php endif; ?>
     
     <div class="Sign-in">
-        <form method="post" action="signin.php">
+        <form method="post" action="index.php">
             <h1>Sign in</h1>
             <p> Use your existing account</p>
             
